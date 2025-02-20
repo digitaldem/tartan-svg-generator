@@ -1,0 +1,28 @@
+{
+  "name": "Royal Stuart",
+  "description": "lassic red dominant tartan with blue, black, yellow and white",
+  "registryUrl": "https://www.tartanregister.gov.uk/tartanDetails?ref=3612",
+  "colors": {
+    "red": "#DC0000",
+    "blue": "#2C4084",
+    "black": "#101010",
+    "yellow": "#E8C000",
+    "white": "#E0E0E0"
+  },
+  "sequences": [
+    { "width": 56, "color": "red" },
+    { "width": 16, "color": "blue" },
+    { "width": 16, "color": "black" },
+    { "width": 8, "color": "yellow" },
+    { "width": 16, "color": "black" },
+    { "width": 16, "color": "red" },
+    { "width": 8, "color": "black" },
+    { "width": 8, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 16, "color": "red" },
+    { "width": 16, "color": "black" },
+    { "width": 8, "color": "yellow" },
+    { "width": 16, "color": "black" },
+    { "width": 16, "color": "blue" }
+  ]
+}

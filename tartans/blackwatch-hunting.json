@@ -1,0 +1,36 @@
+{
+  "name": "Black Watch (Hunting)",
+  "description": "Government variant of the navy blue and hunter green of the Black Watch tartan",
+  "registryUrl": "https://www.tartanregister.gov.uk/tartanDetails?ref=277",
+  "colors": {
+    "navy": "#202060",
+    "black": "#101010",
+    "green": "#006818"
+  },
+  "sequences": [
+    { "width": 176, "color": "navy" },
+    { "width": 16, "color": "black" },
+    { "width": 16, "color": "navy" },
+    { "width": 16, "color": "black" },
+    { "width": 16, "color": "navy" },
+    { "width": 128, "color": "black" },
+    { "width": 128, "color": "green" },
+    { "width": 16, "color": "black" },
+    { "width": 128, "color": "green" },
+    { "width": 128, "color": "black" },
+    { "width": 128, "color": "navy" },
+    { "width": 16, "color": "black" },
+    { "width": 16, "color": "navy" },
+    { "width": 16, "color": "black" },
+    { "width": 128, "color": "navy" },
+    { "width": 128, "color": "black" },
+    { "width": 128, "color": "green" },
+    { "width": 16, "color": "black" },
+    { "width": 128, "color": "green" },
+    { "width": 128, "color": "black" },
+    { "width": 16, "color": "navy" },
+    { "width": 16, "color": "black" },
+    { "width": 16, "color": "navy" },
+    { "width": 16, "color": "black" }
+  ]
+}

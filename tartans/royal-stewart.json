@@ -1,0 +1,37 @@
+{
+  "name": "Royal Stewart",
+  "description": "Classic red-dominant tartan with green sections",
+  "registryUrl": "https://www.tartanregister.gov.uk/tartanDetails?ref=3958",
+  "colors": {
+    "red": "#C80000",
+    "blue": "#2C2C80",
+    "black": "#101010",
+    "yellow": "#E8C000",
+    "white": "#FCFCFC",
+    "green": "#006818"
+  },
+  "sequences": [
+    { "width": 576, "color": "red" },
+    { "width": 64, "color": "blue" },
+    { "width": 96, "color": "black" },
+    { "width": 32, "color": "yellow" },
+    { "width": 32, "color": "black" },
+    { "width": 32, "color": "white" },
+    { "width": 32, "color": "black" },
+    { "width": 128, "color": "green" },
+    { "width": 64, "color": "red" },
+    { "width": 32, "color": "black" },
+    { "width": 32, "color": "red" },
+    { "width": 32, "color": "white" },
+    { "width": 32, "color": "red" },
+    { "width": 32, "color": "black" },
+    { "width": 64, "color": "red" },
+    { "width": 128, "color": "green" },
+    { "width": 32, "color": "black" },
+    { "width": 32, "color": "white" },
+    { "width": 32, "color": "black" },
+    { "width": 32, "color": "yellow" },
+    { "width": 96, "color": "black" },
+    { "width": 64, "color": "blue" }
+  ]
+}

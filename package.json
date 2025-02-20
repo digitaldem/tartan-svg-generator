@@ -1,0 +1,41 @@
+{
+  "name": "tartan-svg-generator",
+  "version": "1.0.0",
+  "description": "Node.js utility to generate various tartan SVG patterns",
+  "main": "index.js",
+  "bin": {
+    "tartan-generator": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "blackwatch": "node index.js blackwatch",
+    "blackwatch-ground": "node index.js blackwatch-ground",
+    "blackwatch-hunting": "node index.js blackwatch-hunting",
+    "macpherson": "node index.js macpherson",
+    "royal-stewart": "node index.js royal-stewart",
+    "royal-stuart": "node index.js royal-stuart",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "svg",
+    "tartan",
+    "pattern",
+    "generator",
+    "plaid",
+    "scottish",
+    "clan"
+  ],
+  "author": "DigitalDementia",
+  "license": "MIT",
+  "engines": {
+    "node": ">=12.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitaldem/tartan-svg-generator.git"
+  },
+  "bugs": {
+    "url": "https://github.com/digitaldem/tartan-svg-generator/issues"
+  },
+  "homepage": "https://github.com/digitaldem/tartan-svg-generator#readme"
+}

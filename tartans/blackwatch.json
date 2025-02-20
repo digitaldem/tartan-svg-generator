@@ -1,0 +1,22 @@
+{
+  "name": "Black Watch",
+  "description": "Navy blue and hunter green of the Black Watch tartan",
+  "registryUrl": "https://www.tartanregister.gov.uk/tartanDetails?ref=5376",
+  "colors": {
+    "navy": "#1C1C50",
+    "black": "#000000",
+    "green": "#285800"
+  },
+  "sequences": [
+    { "width": 16, "color": "navy" },
+    { "width": 16, "color": "black" },
+    { "width": 96, "color": "navy" },
+    { "width": 96, "color": "black" },
+    { "width": 96, "color": "green" },
+    { "width": 16, "color": "black" },
+    { "width": 96, "color": "green" },
+    { "width": 96, "color": "black" },
+    { "width": 96, "color": "navy" },
+    { "width": 16, "color": "black" }
+  ]
+}

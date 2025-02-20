@@ -1,0 +1,35 @@
+{
+  "name": "Black Watch (Ground)",
+  "description": "Monochromatic black and white version of the Black Watch tartan",
+  "registryUrl": "https://www.tartanregister.gov.uk/tartanDetails?ref=282",
+  "colors": {
+    "white": "#FFFFFF",
+    "black": "#101010"
+  },
+  "sequences": [
+    { "width": 8, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 64, "color": "white" },
+    { "width": 64, "color": "black" },
+    { "width": 64, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 64, "color": "white" },
+    { "width": 64, "color": "black" },
+    { "width": 8, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 8, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 88, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 8, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 8, "color": "white" },
+    { "width": 64, "color": "black" },
+    { "width": 64, "color": "white" },
+    { "width": 8, "color": "black" },
+    { "width": 64, "color": "white" },
+    { "width": 64, "color": "black" },
+    { "width": 64, "color": "white" },
+    { "width": 8, "color": "black" }
+  ]
+}

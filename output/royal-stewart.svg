@@ -1,0 +1,20 @@
+<svg viewBox="0 0 1696 1696" width="1696" height="1696" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="pattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <polygon points="0,4 0,8 8,0 4,0" fill="#ffffff"></polygon>
+      <polygon points="4,8 8,8 8,4" fill="#ffffff"></polygon>
+    </pattern>
+    <mask id="grating" x="0" y="0" width="1" height="1">
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)"></rect>
+    </mask>
+  </defs>
+  <clipPath id="dimensionClip">
+    <rect x="0" y="0" width="1696" height="1696" />
+  </clipPath>
+  <g id="tartan" clip-path="url(#dimensionClip)">
+    <g transform="translate(0, 0)">
+      <g class="horizStripes"><rect fill="#C80000" height="576" width="100%" x="0" y="0"></rect><rect fill="#2C2C80" height="64" width="100%" x="0" y="576"></rect><rect fill="#101010" height="96" width="100%" x="0" y="640"></rect><rect fill="#E8C000" height="32" width="100%" x="0" y="736"></rect><rect fill="#101010" height="32" width="100%" x="0" y="768"></rect><rect fill="#FCFCFC" height="32" width="100%" x="0" y="800"></rect><rect fill="#101010" height="32" width="100%" x="0" y="832"></rect><rect fill="#006818" height="128" width="100%" x="0" y="864"></rect><rect fill="#C80000" height="64" width="100%" x="0" y="992"></rect><rect fill="#101010" height="32" width="100%" x="0" y="1056"></rect><rect fill="#C80000" height="32" width="100%" x="0" y="1088"></rect><rect fill="#FCFCFC" height="32" width="100%" x="0" y="1120"></rect><rect fill="#C80000" height="32" width="100%" x="0" y="1152"></rect><rect fill="#101010" height="32" width="100%" x="0" y="1184"></rect><rect fill="#C80000" height="64" width="100%" x="0" y="1216"></rect><rect fill="#006818" height="128" width="100%" x="0" y="1280"></rect><rect fill="#101010" height="32" width="100%" x="0" y="1408"></rect><rect fill="#FCFCFC" height="32" width="100%" x="0" y="1440"></rect><rect fill="#101010" height="32" width="100%" x="0" y="1472"></rect><rect fill="#E8C000" height="32" width="100%" x="0" y="1504"></rect><rect fill="#101010" height="96" width="100%" x="0" y="1536"></rect><rect fill="#2C2C80" height="64" width="100%" x="0" y="1632"></rect></g>
+      <g class="vertStripes" mask="url(#grating)"><rect fill="#C80000" height="100%" width="576" x="0" y="0"></rect><rect fill="#2C2C80" height="100%" width="64" x="576" y="0"></rect><rect fill="#101010" height="100%" width="96" x="640" y="0"></rect><rect fill="#E8C000" height="100%" width="32" x="736" y="0"></rect><rect fill="#101010" height="100%" width="32" x="768" y="0"></rect><rect fill="#FCFCFC" height="100%" width="32" x="800" y="0"></rect><rect fill="#101010" height="100%" width="32" x="832" y="0"></rect><rect fill="#006818" height="100%" width="128" x="864" y="0"></rect><rect fill="#C80000" height="100%" width="64" x="992" y="0"></rect><rect fill="#101010" height="100%" width="32" x="1056" y="0"></rect><rect fill="#C80000" height="100%" width="32" x="1088" y="0"></rect><rect fill="#FCFCFC" height="100%" width="32" x="1120" y="0"></rect><rect fill="#C80000" height="100%" width="32" x="1152" y="0"></rect><rect fill="#101010" height="100%" width="32" x="1184" y="0"></rect><rect fill="#C80000" height="100%" width="64" x="1216" y="0"></rect><rect fill="#006818" height="100%" width="128" x="1280" y="0"></rect><rect fill="#101010" height="100%" width="32" x="1408" y="0"></rect><rect fill="#FCFCFC" height="100%" width="32" x="1440" y="0"></rect><rect fill="#101010" height="100%" width="32" x="1472" y="0"></rect><rect fill="#E8C000" height="100%" width="32" x="1504" y="0"></rect><rect fill="#101010" height="100%" width="96" x="1536" y="0"></rect><rect fill="#2C2C80" height="100%" width="64" x="1632" y="0"></rect></g>
+    </g>
+  </g>
+</svg>
