@@ -10,19 +10,19 @@
     "white": "#E0E0E0"
   },
   "sequences": [
-    { "width": 56, "color": "red" },
-    { "width": 16, "color": "blue" },
-    { "width": 16, "color": "black" },
-    { "width": 8, "color": "yellow" },
-    { "width": 16, "color": "black" },
-    { "width": 16, "color": "red" },
-    { "width": 8, "color": "black" },
-    { "width": 8, "color": "white" },
-    { "width": 8, "color": "black" },
-    { "width": 16, "color": "red" },
-    { "width": 16, "color": "black" },
-    { "width": 8, "color": "yellow" },
-    { "width": 16, "color": "black" },
-    { "width": 16, "color": "blue" }
+    { "width": 168, "color": "red" },
+    { "width": 48, "color": "blue" },
+    { "width": 48, "color": "black" },
+    { "width": 24, "color": "yellow" },
+    { "width": 48, "color": "black" },
+    { "width": 48, "color": "red" },
+    { "width": 24, "color": "black" },
+    { "width": 24, "color": "white" },
+    { "width": 24, "color": "black" },
+    { "width": 48, "color": "red" },
+    { "width": 48, "color": "black" },
+    { "width": 24, "color": "yellow" },
+    { "width": 48, "color": "black" },
+    { "width": 48, "color": "blue" }
   ]
 }
