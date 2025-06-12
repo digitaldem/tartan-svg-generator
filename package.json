@@ -37,5 +37,9 @@
   "bugs": {
     "url": "https://github.com/digitaldem/tartan-svg-generator/issues"
   },
-  "homepage": "https://github.com/digitaldem/tartan-svg-generator#readme"
+  "homepage": "https://github.com/digitaldem/tartan-svg-generator#readme",
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "sharp": "^0.34.2"
+  }
 }

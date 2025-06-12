@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
+const minimist = require('minimist');
 const { generateTartan } = require('./generateTartan');
 
 /**
@@ -10,28 +11,40 @@ function printUsage() {
   console.log(`
 Tartan SVG Generator
 ====================
-Usage: node index.js <tartan-name> [size] [output-path]
+Usage: node index.js <tartan-sett> [-o output-path] [-r repeat]
 
 Available tartans:
 ${fs.readdirSync('tartans').filter(f => !f.startsWith('_')).map(name => `  - ${name.replace('.json', '')}`).join('\n')}
 
 Parameters:
-  tartan-name  : Name of the tartan pattern to generate (required)
-  size         : Size in pixels (optional)
-  output-file  : Where to save the SVG file (optional, defaults to ./output/<tartan-name>.svg)
+  tartan-sett : Name of the tartan sett (pattern) to generate (required)
+  output-file : Where to save the SVG file (optional, defaults to ./output/<tartan-sett>.svg)
+  repeat      : Number of repeats of the sett (optional, defaults to 1)
 
 Examples:
   node index.js blackwatch
-  node index.js blackwatch 1000
-  node index.js blackwatch 2000 ./output/blackwatch2000.svg
+  node index.js blackwatch -o ./output/blackwatch.svg
+  node index.js blackwatch -r 2
+  node index.js blackwatch -o ./output/blackwatch_2x2.svg -r 2
   `);
 }
 
 /**
  * Main function to process CLI arguments and generate the selected tartan
  */
-function main() {
-  const args = process.argv.slice(2);
+async function main() {
+  const args = minimist(process.argv.slice(2), {
+    alias: {
+      o: 'output',
+      r: 'repeat',
+      h: 'help'
+    }
+  });
+
+  if (args.help || args._.length === 0) {
+    printUsage();
+    process.exit(0);
+  }
 
   // Show usage if no arguments or help requested
   if (args.length === 0 || args[0] === '--help' || args[0] === '-h') {
@@ -39,14 +52,23 @@ function main() {
     process.exit(0);
   }
 
-  const tartanName = args[0].toLowerCase();
-  const size = args[1] && !isNaN(parseInt(args[1])) ? parseInt(args[1]) : null;
-  const output = args[2] || path.join(__dirname, 'output', `${tartanName}.svg`);;
+  const tartanSett = args._[0]?.toLowerCase();
+  const output = args.output || path.join(__dirname, 'output', `${tartanSett}.svg`);
+  const repeat = parseInt(args.repeat || '1', 10);
+
+  if (isNaN(repeat) || repeat < 1) {
+    console.error('Repeat must be a positive integer.');
+    process.exit(1);
+  }
 
   try {
     // Call the generator function
-    generateTartan(tartanName, output, size, size);
-    console.log(`Successfully generated tartan.`);
+    const success = await generateTartan(tartanSett, output, repeat);
+    if (success) {
+      console.log(`Successfully generated tartan.`);
+      process.exit(0);
+    }
+    throw new Error('Tartan generation failed with unspecified error.');
   } catch (error) {
     console.error(`Error generating tartan: ${error.message}`);
     process.exit(1);

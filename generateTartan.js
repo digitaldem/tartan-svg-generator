@@ -1,33 +1,30 @@
 const fs = require('fs');
 const path = require('path');
+const sharp = require('sharp');
 const { validateTartan } = require('./validateTartan');
 const { validateOutput } = require('./validateOutput');
 
 /**
  * Generate the Black Watch tartan SVG pattern
- * @param {Object} tartan - Tartan configuration object or name of JSON config file
+ * @param {Object} sett - Tartan configuration object or name of JSON config file
  * @param {string} output - Output file to save the SVG file
- * @param {number} [width] - Optional specific width
- * @param {number} [height] - Optional specific height (if different from width)
+ * @param {number} [repeat] - Number of repeats of the tartan sett
  * @throws {Error} If tartan configuration is invalid
  */
-function generateTartan(tartan, output, width, height) {
+async function generateTartan(sett, output, repeat) {
   // Validate the required parameters
-  const config = validateTartan(tartan);
-  const outFile = validateOutput(output);
+  const config = validateTartan(sett);
+  const outputSvg = validateOutput(output);
+  const outputPng = outputSvg.replace(/\.svg$/, '.png');
 
   // Extract the details from the config object
   const { name, colors, sequences } = config;
   // Determine the size of the swatch
-  const swatchSize = sequences.reduce((sum, item) => sum + item.width, 0);
+  const settSize = sequences.reduce((sum, item) => sum + item.width, 0);
+  console.log(`Generating ${name} tartan using ${settSize} sett at ${repeat}x${repeat}`);
 
-  // Determine the width and height
-  const outWidth = (typeof width === 'number' && width > 0) ? Math.floor(width) : swatchSize;
-  const outHeight = (typeof height === 'number' && height > 0) ? Math.floor(height) : outWidth;
-
-  // Calculate number of repeats needed (add 1 to ensure full coverage including partial tiles)
-  const repeatX = Math.ceil(outWidth / swatchSize) + (outWidth % swatchSize === 0 ? 0 : 1);
-  const repeatY = Math.ceil(outHeight / swatchSize) + (outHeight % swatchSize === 0 ? 0 : 1);
+  // Calculate the output size based on repeat factor
+  const outputSize = (typeof repeat === 'number' && repeat > 0) ? settSize * repeat : settSize;
 
   // Generate the horizontal stripes
   let horizStripes = '';
@@ -51,7 +48,7 @@ function generateTartan(tartan, output, width, height) {
   // Add defs section with pattern and mask
   // Add clipping to ensure we only show the requested dimensions
   // Begin the tartan group
-  let svg = `<svg viewBox="0 0 ${outWidth} ${outHeight}" width="${outWidth}" height="${outHeight}" xmlns="http://www.w3.org/2000/svg">
+  let svg = `<svg viewBox="0 0 ${outputSize} ${outputSize}" width="${outputSize}" height="${outputSize}" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <pattern id="pattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
       <polygon points="0,4 0,8 8,0 4,0" fill="#ffffff"></polygon>
@@ -62,16 +59,16 @@ function generateTartan(tartan, output, width, height) {
     </mask>
   </defs>
   <clipPath id="dimensionClip">
-    <rect x="0" y="0" width="${outWidth}" height="${outHeight}" />
+    <rect x="0" y="0" width="${outputSize}" height="${outputSize}" />
   </clipPath>
   <g id="tartan" clip-path="url(#dimensionClip)">`;
 
   // Repeat horizontally and vertically to ensure full coverage
-  for (let row = 0; row < repeatY; row++) {
-    for (let col = 0; col < repeatX; col++) {
+  for (let row = 0; row < repeat; row++) {
+    for (let col = 0; col < repeat; col++) {
       svg +=
 `
-    <g transform="translate(${col * swatchSize}, ${row * swatchSize})">
+    <g transform="translate(${col * settSize}, ${row * settSize})">
       <g class="horizStripes">${horizStripes}</g>
       <g class="vertStripes" mask="url(#grating)">${vertStripes}</g>
     </g>
@@ -82,11 +79,18 @@ function generateTartan(tartan, output, width, height) {
   // Close the group and the SVG
   svg += `  </g>\n</svg>`;
 
-  // Write to file
-  fs.writeFileSync(outFile, svg);
-  console.log(`${name} SVG generated at ${outFile} (${outWidth}x${outHeight})`);
+  // Create PNG version
+  const png = await sharp(Buffer.from(svg)).png().toBuffer();
 
-  return svg;
+  // Write to SVG file
+  await fs.promises.writeFile(outputSvg, svg);
+  console.log(`${name} SVG generated at ${outputSvg} (${outputSize}x${outputSize})`);
+
+  // Write to PNG file
+  await fs.promises.writeFile(outputPng, png);
+  console.log(`${name} PNG generated at ${outputPng} (${outputSize}x${outputSize})`);
+
+  return true;
 }
 
 // Export for use as a module
