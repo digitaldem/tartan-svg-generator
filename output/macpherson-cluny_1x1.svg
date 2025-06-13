@@ -1,0 +1,20 @@
+<svg viewBox="0 0 564 564" width="564" height="564" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <pattern id="pattern" x="0" y="0" width="8" height="8" patternUnits="userSpaceOnUse">
+      <polygon points="0,4 0,8 8,0 4,0" fill="#ffffff"></polygon>
+      <polygon points="4,8 8,8 8,4" fill="#ffffff"></polygon>
+    </pattern>
+    <mask id="grating" x="0" y="0" width="1" height="1">
+      <rect x="0" y="0" width="100%" height="100%" fill="url(#pattern)"></rect>
+    </mask>
+  </defs>
+  <clipPath id="dimensionClip">
+    <rect x="0" y="0" width="564" height="564" />
+  </clipPath>
+  <g id="tartan" clip-path="url(#dimensionClip)">
+    <g transform="translate(0, 0)">
+      <g class="horizStripes"><rect fill="#DC0000" height="24" width="100%" x="0" y="0"></rect><rect fill="#101010" height="12" width="100%" x="0" y="24"></rect><rect fill="#DC0000" height="116" width="100%" x="0" y="36"></rect><rect fill="#101010" height="92" width="100%" x="0" y="152"></rect><rect fill="#E0E0E0" height="16" width="100%" x="0" y="244"></rect><rect fill="#101010" height="28" width="100%" x="0" y="260"></rect><rect fill="#E8C000" height="12" width="100%" x="0" y="288"></rect><rect fill="#101010" height="28" width="100%" x="0" y="300"></rect><rect fill="#E0E0E0" height="16" width="100%" x="0" y="328"></rect><rect fill="#101010" height="92" width="100%" x="0" y="344"></rect><rect fill="#DC0000" height="116" width="100%" x="0" y="436"></rect><rect fill="#101010" height="12" width="100%" x="0" y="552"></rect></g>
+      <g class="vertStripes" mask="url(#grating)"><rect fill="#DC0000" height="100%" width="24" x="0" y="0"></rect><rect fill="#101010" height="100%" width="12" x="24" y="0"></rect><rect fill="#DC0000" height="100%" width="116" x="36" y="0"></rect><rect fill="#101010" height="100%" width="92" x="152" y="0"></rect><rect fill="#E0E0E0" height="100%" width="16" x="244" y="0"></rect><rect fill="#101010" height="100%" width="28" x="260" y="0"></rect><rect fill="#E8C000" height="100%" width="12" x="288" y="0"></rect><rect fill="#101010" height="100%" width="28" x="300" y="0"></rect><rect fill="#E0E0E0" height="100%" width="16" x="328" y="0"></rect><rect fill="#101010" height="100%" width="92" x="344" y="0"></rect><rect fill="#DC0000" height="100%" width="116" x="436" y="0"></rect><rect fill="#101010" height="100%" width="12" x="552" y="0"></rect></g>
+    </g>
+  </g>
+</svg>

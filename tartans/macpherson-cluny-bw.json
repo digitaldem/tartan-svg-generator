@@ -1,0 +1,24 @@
+{
+  "name": "Macpherson of Cluny (Black & White)",
+  "description": "White, black and red accents formal tartan of the Macpherson of Cluny clan",
+  "registryUrl": "https://www.tartanregister.gov.uk/tartanDetails?ref=2724",
+  "colors": {
+    "white": "#FCFCFC",
+    "black": "#101010",
+    "red": "#C80000"
+  },
+  "sett": [
+    { "width": 8, "color": "white" },
+    { "width": 44, "color": "black" },
+    { "width": 16, "color": "white" },
+    { "width": 112, "color": "black" },
+    { "width": 140, "color": "white" },
+    { "width": 12, "color": "red" },
+    { "width": 20, "color": "white" },
+    { "width": 12, "color": "red" },
+    { "width": 140, "color": "white" },
+    { "width": 112, "color": "black" },
+    { "width": 16, "color": "white" },
+    { "width": 44, "color": "black" }
+  ]
+}
