@@ -8,12 +8,6 @@
   },
   "scripts": {
     "start": "node index.js",
-    "blackwatch": "node index.js blackwatch",
-    "blackwatch-ground": "node index.js blackwatch-ground",
-    "blackwatch-hunting": "node index.js blackwatch-hunting",
-    "macpherson": "node index.js macpherson",
-    "royal-stewart": "node index.js royal-stewart",
-    "royal-stuart": "node index.js royal-stuart",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
