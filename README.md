@@ -25,12 +25,15 @@ npm install
 
 ```bash
 # Basic usage
-node index.js <tartan-name> [size] [output-file]
+node index.js <tartan> [-r repeat]
+
+# Parameters:
+tartan : Name of the tartan to generate (required)
+repeat : Number of repeats of the sett (optional, defaults to 1)
 
 # Examples
 node index.js blackwatch
-node index.js blackwatch 1000
-node index.js blackwatch 2000 ./output/blackwatch2000.svg
+node index.js blackwatch -r 2
 
 ```
 
@@ -64,8 +67,7 @@ npm run blackwatch
 1. Copy the `_tartan-template.json` file inside the `tartans` directory to define a new tartan configuration
 2. Rename it to `<tartanname>.json`
 3. Set the Name, Description and the Tartan Registry Link values
-4. Define your color palette and stripe sequences
-5. Add to `scripts` section in `package.json` (Optional)
+4. Define your color palette and stripe sett
 
 
 ## License
