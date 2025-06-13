@@ -6,7 +6,7 @@
     "white": "#FFFFFF",
     "black": "#101010"
   },
-  "sequences": [
+  "sett": [
     { "width": 8, "color": "white" },
     { "width": 8, "color": "black" },
     { "width": 64, "color": "white" },

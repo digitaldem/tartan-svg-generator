@@ -6,7 +6,7 @@ const path = require('path');
  * @param {Object} config - Tartan configuration to validate
  * @throws {Error} If configuration is invalid
  */
-function validateTartan(config) {
+function validateTartanConfig(config) {
   // Load configuration if it's a string otherwise just use the object as-is
   const tartan = (typeof config === 'string') ? _loadConfig(config) : config;
 
@@ -48,12 +48,12 @@ function _validateRequiredFields(tartan) {
     _validateColor(color);
   }
 
-  // Validate sequences
-  if (!tartan.sequences || !Array.isArray(tartan.sequences) || tartan.sequences.length === 0) {
-    throw new Error('Tartan configuration missing required field: sequence (must be a non-empty array)');
+  // Validate sett
+  if (!tartan.sett || !Array.isArray(tartan.sett) || tartan.sett.length === 0) {
+    throw new Error('Tartan configuration missing required field: sett (must be a non-empty array)');
   }
-  for (const sequence of tartan.sequences) {
-    _validateSequence(sequence);
+  for (const stripe of tartan.sett) {
+    _validateStripe(stripe);
   }
 }
 
@@ -69,21 +69,21 @@ function _validateColor(color) {
   }
 }
 
-function _validateSequence(sequence) {
+function _validateStripe(stripe) {
   // Validate the data type
-  if (typeof sequence !== 'object' || sequence === null) {
-    throw new Error(`Invalid sequence item: ${JSON.stringify(sequence)}`);
+  if (typeof stripe !== 'object' || stripe === null) {
+    throw new Error(`Invalid sett stripe: ${JSON.stringify(stripe)}`);
   }
 
   // Validate sequence item has width and color
-  const { width, color } = sequence;
+  const { width, color } = stripe;
   if (typeof width !== 'number' || width <= 0) {
-    throw new Error(`Invalid width in sequence item: ${JSON.stringify(sequence)}`);
+    throw new Error(`Invalid width in sett stripe: ${JSON.stringify(stripe)}`);
   }
   if (typeof color !== 'string' || color.trim() === '') {
-    throw new Error(`Invalid color in sequence item: ${JSON.stringify(sequence)}`);
+    throw new Error(`Invalid color in sett stripe: ${JSON.stringify(stripe)}`);
   }
 }
 
 // Export
-module.exports = { validateTartan };
+module.exports = { validateTartanConfig };

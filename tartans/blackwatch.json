@@ -7,7 +7,7 @@
     "black": "#000000",
     "green": "#285800"
   },
-  "sequences": [
+  "sett": [
     { "width": 16, "color": "navy" },
     { "width": 16, "color": "black" },
     { "width": 96, "color": "navy" },

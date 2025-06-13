@@ -1,26 +1,23 @@
 const fs = require('fs');
 const path = require('path');
 const sharp = require('sharp');
-const { validateTartan } = require('./validateTartan');
-const { validateOutput } = require('./validateOutput');
+const { validateTartanConfig } = require('./validateTartanConfig');
 
 /**
  * Generate the Black Watch tartan SVG pattern
- * @param {Object} sett - Tartan configuration object or name of JSON config file
- * @param {string} output - Output file to save the SVG file
- * @param {number} [repeat] - Number of repeats of the tartan sett
+ * @param {Object} tartan - Tartan configuration object or name of JSON config file
+ * @param {number} repeat - Number of repeats of the tartan sett
  * @throws {Error} If tartan configuration is invalid
  */
-async function generateTartan(sett, output, repeat) {
+async function generateTartan(tartan, repeat) {
   // Validate the required parameters
-  const config = validateTartan(sett);
-  const outputSvg = validateOutput(output);
-  const outputPng = outputSvg.replace(/\.svg$/, '.png');
+  const config = validateTartanConfig(tartan);
+  const output = path.join(__dirname, 'output', `${tartan}_${repeat}x${repeat}`);
 
   // Extract the details from the config object
-  const { name, colors, sequences } = config;
+  const { name, colors, sett } = config;
   // Determine the size of the swatch
-  const settSize = sequences.reduce((sum, item) => sum + item.width, 0);
+  const settSize = sett.reduce((sum, item) => sum + item.width, 0);
   console.log(`Generating ${name} tartan using ${settSize} sett at ${repeat}x${repeat}`);
 
   // Calculate the output size based on repeat factor
@@ -29,7 +26,7 @@ async function generateTartan(sett, output, repeat) {
   // Generate the horizontal stripes
   let horizStripes = '';
   let y = 0;
-  for (const item of sequences) {
+  for (const item of sett) {
     const color = item.color.startsWith('#') ? item.color : colors[item.color];
     horizStripes += `<rect fill="${color}" height="${item.width}" width="100%" x="0" y="${y}"></rect>`;
     y += item.width;
@@ -38,7 +35,7 @@ async function generateTartan(sett, output, repeat) {
   // Generate the vertical stripes
   let vertStripes = '';
   let x = 0;
-  for (const item of sequences) {
+  for (const item of sett) {
     const color = item.color.startsWith('#') ? item.color : colors[item.color];
     vertStripes += `<rect fill="${color}" height="100%" width="${item.width}" x="${x}" y="0"></rect>`;
     x += item.width;
@@ -83,10 +80,12 @@ async function generateTartan(sett, output, repeat) {
   const png = await sharp(Buffer.from(svg)).png().toBuffer();
 
   // Write to SVG file
+  const outputSvg = `${output}.svg`;
   await fs.promises.writeFile(outputSvg, svg);
   console.log(`${name} SVG generated at ${outputSvg} (${outputSize}x${outputSize})`);
 
   // Write to PNG file
+  const outputPng = `${output}.png`;
   await fs.promises.writeFile(outputPng, png);
   console.log(`${name} PNG generated at ${outputPng} (${outputSize}x${outputSize})`);
 

@@ -9,7 +9,7 @@
     "yellow": "#E8C000",
     "white": "#E0E0E0"
   },
-  "sequences": [
+  "sett": [
     { "width": 168, "color": "red" },
     { "width": 48, "color": "blue" },
     { "width": 48, "color": "black" },

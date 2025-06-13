@@ -6,7 +6,7 @@
     "red": "#DC0000",
     "green": "#005020"
   },
-  "sequences": [
+  "sett": [
     { "width": 48, "color": "red" },
     { "width": 8, "color": "green" }
   ]
